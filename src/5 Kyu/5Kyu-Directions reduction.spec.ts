@@ -6,17 +6,17 @@ function dotest(arr: string[], expected: string[]) {
 
 describe("Fixed Tests", function() {
     it("dirReduc", function() {
-        var a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
+        let a = ["NORTH", "SOUTH", "SOUTH", "EAST", "WEST", "NORTH", "WEST"]
         dotest(a, ["WEST"])
-        var b=["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"]
+        let b=["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH"]
         dotest(b, [])
-        var c = ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH","NORTH"]
+        let c = ["NORTH","SOUTH","SOUTH","EAST","WEST","NORTH","NORTH"]
         dotest(c, ["NORTH"])
-        var u = ["EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"]
+        let u = ["EAST", "EAST", "WEST", "NORTH", "WEST", "EAST", "EAST", "SOUTH", "NORTH", "WEST"]
         dotest(u, ["EAST", "NORTH"])
-        var v = ["NORTH", "EAST", "NORTH", "EAST", "WEST", "WEST", "EAST", "EAST", "WEST", "SOUTH"]
+        let v = ["NORTH", "EAST", "NORTH", "EAST", "WEST", "WEST", "EAST", "EAST", "WEST", "SOUTH"]
         dotest(v, ["NORTH", "EAST"])
-        var t =["NORTH", "WEST", "SOUTH", "EAST"]
+        let t =["NORTH", "WEST", "SOUTH", "EAST"]
         dotest(t, ["NORTH", "WEST", "SOUTH", "EAST"])
     });
 });
@@ -26,16 +26,16 @@ function randint(a: number, b: number) {
 }
 //...............
 function dirReducSQP(arr: string[]){
-  var pat = /(NORTHSOUTH|SOUTHNORTH|EASTWEST|WESTEAST)/;
-  var way = arr.join('');
+  let pat = /(NORTHSOUTH|SOUTHNORTH|EASTWEST|WESTEAST)/;
+  let way = arr.join('');
   while( pat.test(way) ) way = way.replace(pat, '');
   return way.match(/(NORTH|SOUTH|EAST|WEST)/g) || []
 }
 function randomDir(k: number) {
-    var res = [];
+    let res = [];
     for (let i = 0; i < k; i++) {
-        var n = randint(0, 3);
-        var x;
+        let n = randint(0, 3);
+        let x;
         if (n == 0) x = "NORTH"; 
         else if (n == 1) x = "SOUTH"; 
         else if (n == 2) x = "WEST";
@@ -48,10 +48,10 @@ function randomDir(k: number) {
 
 describe("Random Tests", function() {
     it("Random tests", function() {
-        for (var i = 0; i < 100; i++) {
-            var testlen = randint(8, 20);
-            var arr = randomDir(testlen);
-            var sol = dirReducSQP(arr);
+        for (let i = 0; i < 100; i++) {
+            let testlen = randint(8, 20);
+            let arr = randomDir(testlen);
+            let sol = dirReducSQP(arr);
             //console.log(sol, "\n");
             dotest(arr, sol);
         }
