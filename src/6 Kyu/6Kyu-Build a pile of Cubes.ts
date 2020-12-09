@@ -25,14 +25,14 @@ export function findNb(m: number): number {
   let result = 0;
   n++;
   const cube = Math.pow(n, 3);
-  if ((m - cube) < 0) {
+  if (m - cube < 0) {
     n = 0;
     return -1;
-  } else if ((m - cube) === 0) {
+  } else if (m - cube === 0) {
     result = n;
     n = 0;
     return result;
   } else {
-    return findNb((m - cube));
+    return findNb(m - cube);
   }
 }

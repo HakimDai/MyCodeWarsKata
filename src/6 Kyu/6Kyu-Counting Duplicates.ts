@@ -9,17 +9,17 @@
 // "aA11" -> 2 # 'a' and '1'
 // "ABBA" -> 2 # 'A' and 'B' each occur twice
 
-export function duplicateCount(text: string): number{
-    let splittedLowerCaseCharacter: string[] = text.toLowerCase().split('');
-    let result: string[] = [];
-    for (let i = 0; i < splittedLowerCaseCharacter.length; i++) {
-        for (let j = (1 + i); j < splittedLowerCaseCharacter.length; j++) {
-            if (splittedLowerCaseCharacter[i] === splittedLowerCaseCharacter[j]) {
-                if (!result.includes(splittedLowerCaseCharacter[i])) {
-                    result.push(splittedLowerCaseCharacter[i])
-                }
-            }
+export function duplicateCount(text: string): number {
+  let splittedLowerCaseCharacter: string[] = text.toLowerCase().split('');
+  let result: string[] = [];
+  for (let i = 0; i < splittedLowerCaseCharacter.length; i++) {
+    for (let j = 1 + i; j < splittedLowerCaseCharacter.length; j++) {
+      if (splittedLowerCaseCharacter[i] === splittedLowerCaseCharacter[j]) {
+        if (!result.includes(splittedLowerCaseCharacter[i])) {
+          result.push(splittedLowerCaseCharacter[i]);
         }
+      }
     }
-    return result.length;
+  }
+  return result.length;
 }

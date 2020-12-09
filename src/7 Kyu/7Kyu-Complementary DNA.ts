@@ -13,31 +13,30 @@
 //
 // dnaStrand("GTAT") // return "CATA"
 
-
 export class Kata {
-    static dnaStrand(dna: string) {
-        let splittedDNA: string[] = dna.split('');
-        let complementaryDNA: string = '';
-        let complementaryDNASplitted: string[] = [];
-        function pushDNA(dna: string) {
-            complementaryDNASplitted.push(dna);
-        }
-        for (let symbol of splittedDNA) {
-            switch (symbol) {
-                case 'A':
-                    pushDNA('T');
-                    break;
-                case 'T':
-                    pushDNA('A');
-                    break;
-                case 'C':
-                    pushDNA('G');
-                    break;
-                case 'G':
-                    pushDNA('C');
-                    break;
-            }
-        }
-        return complementaryDNA = complementaryDNASplitted.join('');
+  static dnaStrand(dna: string) {
+    let splittedDNA: string[] = dna.split('');
+    let complementaryDNA: string = '';
+    let complementaryDNASplitted: string[] = [];
+    function pushDNA(dna: string) {
+      complementaryDNASplitted.push(dna);
     }
+    for (let symbol of splittedDNA) {
+      switch (symbol) {
+        case 'A':
+          pushDNA('T');
+          break;
+        case 'T':
+          pushDNA('A');
+          break;
+        case 'C':
+          pushDNA('G');
+          break;
+        case 'G':
+          pushDNA('C');
+          break;
+      }
+    }
+    return (complementaryDNA = complementaryDNASplitted.join(''));
+  }
 }

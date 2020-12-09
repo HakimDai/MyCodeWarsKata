@@ -30,7 +30,7 @@
 
 // The path becomes ["EAST", "WEST"], now "EAST" and "WEST" annihilate each other, therefore, the final result is [] (nil in Clojure).
 
-// In ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"], "NORTH" and "SOUTH" are not directly opposite 
+// In ["NORTH", "EAST", "WEST", "SOUTH", "WEST", "WEST"], "NORTH" and "SOUTH" are not directly opposite
 // but they become directly opposite after the reduction of "EAST" and "WEST" so the whole path is reducible to ["WEST", "WEST"].
 
 // Task
@@ -47,32 +47,32 @@
 
 export function dirReduc(arr: string[]): string[] {
   for (let i = 0; i < arr.length; i++) {
-      switch (arr[i]) {
-        case 'NORTH':
-          if (arr[i + 1] === 'SOUTH') {
-            arr.splice(i, 2);
-            return dirReduc(arr);
-          }
-          break;
-        case 'SOUTH':
-          if (arr[i + 1] === 'NORTH') {
-            arr.splice(i, 2);
-            return dirReduc(arr);
-          }
-          break;
-        case 'EAST':
-          if (arr[i + 1] === 'WEST') {
-            arr.splice(i, 2);
-            return dirReduc(arr);
-          }
-          break;
-        case 'WEST':
-          if (arr[i + 1] === 'EAST') {
-            arr.splice(i, 2);
-            return dirReduc(arr);
-          }
-          break;
-      }
+    switch (arr[i]) {
+      case 'NORTH':
+        if (arr[i + 1] === 'SOUTH') {
+          arr.splice(i, 2);
+          return dirReduc(arr);
+        }
+        break;
+      case 'SOUTH':
+        if (arr[i + 1] === 'NORTH') {
+          arr.splice(i, 2);
+          return dirReduc(arr);
+        }
+        break;
+      case 'EAST':
+        if (arr[i + 1] === 'WEST') {
+          arr.splice(i, 2);
+          return dirReduc(arr);
+        }
+        break;
+      case 'WEST':
+        if (arr[i + 1] === 'EAST') {
+          arr.splice(i, 2);
+          return dirReduc(arr);
+        }
+        break;
     }
+  }
   return arr;
 }
