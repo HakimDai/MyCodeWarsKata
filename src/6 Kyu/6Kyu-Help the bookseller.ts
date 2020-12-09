@@ -11,7 +11,7 @@
 // L = ["ABART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"] or ....
 // You will be given a stocklist (e.g. : L) and a list of categories in capital letters e.g :
 
-// M = {"A", "B", "C", "W"} 
+// M = {"A", "B", "C", "W"}
 // or
 // M = ["A", "B", "C", "W"] or ...
 // and your task is to find all the books of L with codes belonging to each category of M and to sum their quantity according to each category.
@@ -27,18 +27,19 @@
 // Note:
 // In the result codes and their values are in the same order as in M.
 
-
 export class G964 {
-
-  public static stockList = (listOfArt: string[], listOfCat: string []): string => {
+  public static stockList = (
+    listOfArt: string[],
+    listOfCat: string[]
+  ): string => {
     let splittedListOfArt: string[][] = [];
     let countedArt: string[][] = [];
     let result: string = '';
     if (listOfArt.length === 0 || listOfCat.length === 0) {
-      return result = '';
+      return (result = '');
     }
     for (let art of listOfArt) {
-      splittedListOfArt.push(art.split(' '))
+      splittedListOfArt.push(art.split(' '));
     }
     for (let cat of listOfCat) {
       let count = 0;
@@ -49,10 +50,12 @@ export class G964 {
       }
       countedArt.push([cat, count.toString()]);
     }
-    for (let i = 0; i < countedArt.length -1; i++) {
+    for (let i = 0; i < countedArt.length - 1; i++) {
       result += `(${countedArt[i][0]} : ${countedArt[i][1]}) - `;
     }
-    result += `(${countedArt[countedArt.length - 1][0]} : ${countedArt[countedArt.length - 1][1]})`;
+    result += `(${countedArt[countedArt.length - 1][0]} : ${
+      countedArt[countedArt.length - 1][1]
+    })`;
     return result;
-  }
+  };
 }

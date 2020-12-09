@@ -12,13 +12,13 @@ Notes:
     Output string must be two numbers separated by a single space, and highest number is first.*/
 
 export class Kata {
-    static highAndLow(numbers: string) {
-        let numbersArray: string[] = numbers.split(' ');
-        numbersArray.sort((a, b) => parseInt(b) - parseInt(a));
-        let resultArray: string[] = [];
-        resultArray.push(numbersArray[0]);
-        resultArray.push(numbersArray[numbersArray.length - 1]);
-        let result: string = resultArray.join(' ');
-        return result;
-    }
+  static highAndLow(numbers: string) {
+    let numbersArray: string[] = numbers.split(' ');
+    numbersArray.sort((a, b) => parseInt(b) - parseInt(a));
+    let resultArray: string[] = [];
+    resultArray.push(numbersArray[0]);
+    resultArray.push(numbersArray[numbersArray.length - 1]);
+    let result: string = resultArray.join(' ');
+    return result;
+  }
 }

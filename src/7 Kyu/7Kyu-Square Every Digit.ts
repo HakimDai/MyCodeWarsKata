@@ -5,12 +5,12 @@
 // Note: The function accepts an integer and returns an integer
 
 export class Kata {
-    static squareDigits(num: number) {
-        let splittedDigits: string[] = num.toString().split('');
-        let squaredDigits: string = '';
-        for (let i = 0; i < splittedDigits.length; i++) {
-            squaredDigits += (+splittedDigits[i] * +splittedDigits[i]).toString();
-        }
-        return +squaredDigits;
+  static squareDigits(num: number) {
+    let splittedDigits: string[] = num.toString().split('');
+    let squaredDigits: string = '';
+    for (let i = 0; i < splittedDigits.length; i++) {
+      squaredDigits += (+splittedDigits[i] * +splittedDigits[i]).toString();
     }
+    return +squaredDigits;
+  }
 }

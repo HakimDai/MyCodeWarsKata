@@ -7,5 +7,5 @@
 // numberToString(999); // returns '999';`
 
 export function numberToString(num: number): string {
-    return `${num}`;
+  return `${num}`;
 }
