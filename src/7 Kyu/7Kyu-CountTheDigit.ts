@@ -8,9 +8,10 @@ export class G964 {
     let i = 0;
     const length = n + 1;
     while (i < length) {
-    const squarredValue = (i * i).toString().split('');
+      const squarredValue = (i * i).toString().split('');
       if (squarredValue.some((value) => value === d.toString())) {
-        result += squarredValue.filter((value) => value === d.toString()).length;
+        result += squarredValue.filter((value) => value === d.toString())
+          .length;
       }
       i++;
     }
